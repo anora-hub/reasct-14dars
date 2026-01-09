@@ -44,7 +44,7 @@ const Header = () => {
 
 
                         <div className='flex items-center gap-4'>
-                            <img src="./public/rasm7.png" alt="" />
+                            <img src="rasm7.png" alt="" />
                             <h1 className='text-white font-bold text-[35px]'>
                                <Link to={`/`}>
                                     CLICON
@@ -79,9 +79,9 @@ const Header = () => {
 
 
                         <div className='flex gap-[5px]'>
-                            <img src="./public/rasm9.png" alt="" />
-                            <img src="./public/rasm10.png" alt="" />
-                            <img src="./public/rasm11.png" alt="" />
+                            <img src="rasm9.png" alt="" />
+                            <img src="rasm10.png" alt="" />
+                            <img src="rasm11.png" alt="" />
                         </div>
 
                     </div>
@@ -106,28 +106,28 @@ const Header = () => {
                             </div>
 
                             <div className="flex gap-3">
-                                <img src="./public/rasm13.png" alt="" />
+                                <img src="rasm13.png" alt="" />
                                 <p className="text-[#5F6C72]">Track Order</p>
                             </div>
 
                             <div className="flex gap-3">
-                                <img src="./public/rasm14.png" alt="" />
+                                <img src="rasm14.png" alt="" />
                                 <p className="text-[#5F6C72]">Compare</p>
                             </div>
 
                             <div className="flex gap-3">
-                                <img src="./public/rasm15.png" alt="" />
+                                <img src="rasm15.png" alt="" />
                                 <p className="text-[#5F6C72]">Customer Support</p>
                             </div>
 
                             <div className="flex gap-3">
-                                <img src="./public/rasm16.png" alt="" />
+                                <img src="rasm16.png" alt="" />
                                 <p className="text-[#5F6C72]">Need Help</p>
                             </div>
                         </div>
 
                         <div className="flex gap-3">
-                            <img src="./public/rasm17.png" alt="" />
+                            <img src="rasm17.png" alt="" />
                             <h3>+1-202-555-0104</h3>
                         </div>
                     </div>

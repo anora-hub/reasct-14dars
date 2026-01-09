@@ -56,7 +56,7 @@ const HomePage = () => {
 
 
                             <div class="relative mt-6 md:mt-0">
-                                <img src="./public/rasm18.png" alt="" />
+                                <img src="rasm18.png" alt="" />
                                 <span class="absolute -top-4 -right-4 bg-blue-500 text-white px-4 py-2 rounded-full font-semibold">
                                     $299
                                 </span>
@@ -83,14 +83,14 @@ const HomePage = () => {
                                     <span class="bg-yellow-400 text-black text-xs px-3 py-1 rounded">
                                         29% OFF
                                     </span>
-                                    <img src="./public/rasm19.png" alt="" />
+                                    <img src="rasm19.png" alt="" />
 
                                 </div>
                             </div>
 
 
                             <div class="bg-gray-100 rounded-lg p-6 flex items-center justify-between">
-                                <img src="./public/rasm20.png" alt="" />
+                                <img src="rasm20.png" alt="" />
                                 <div>
                                     <h3 class="text-lg font-semibold text-gray-900 mb-2">
                                         Xiaomi FlipBuds Pro
@@ -110,7 +110,7 @@ const HomePage = () => {
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10 text-center">
 
                         <div className='border border-[1px] border-[black]/20 p-5  flex gap-5 '>
-                            <img src="./public/rasm21.png" alt="" />
+                            <img src="rasm21.png" alt="" />
                             <div>
                                 <p class="font-semibold text-gray-800">Fast Delivery</p>
                                 <p class="text-sm text-gray-500">Delivery in 24h</p>
@@ -118,7 +118,7 @@ const HomePage = () => {
                         </div>
 
                         <div className='border border-[1px] border-[black]/20 p-5  flex gap-5 '>
-                            <img src="./public/rasm23.png" alt="" />
+                            <img src="rasm23.png" alt="" />
                             <div>
                                 <p class="font-semibold text-gray-800">24 Hours Return</p>
                                 <p class="text-sm text-gray-500">Money back</p>
@@ -126,7 +126,7 @@ const HomePage = () => {
                         </div>
 
                         <div className='border border-[1px] border-[black]/20 p-5  flex gap-5 '>
-                            <img src="./public/rasm22.png" alt="" />
+                            <img src="rasm22.png" alt="" />
                             <div>
                                 <p class="font-semibold text-gray-800">Secure Payment</p>
                                 <p class="text-sm text-gray-500">100% secure</p>
@@ -134,7 +134,7 @@ const HomePage = () => {
                         </div>
 
                         <div className='border border-[1px] border-[black]/20 p-5  flex gap-5 '>
-                            <img src="./public/rasm24.png" alt="" />
+                            <img src="rasm24.png" alt="" />
                             <div>
                                 <p class="font-semibold text-gray-800">Support 24/7</p>
                                 <p class="text-sm text-gray-500">Online support</p>
@@ -173,7 +173,7 @@ const HomePage = () => {
 
 
                             <div class="relative max-w-[450px] w-full h-[700px] border-2 border-gray-200">
-                                <img src="./public/rasm26.png" alt="product" />
+                                <img src="rasm26.png" alt="product" />
 
 
                                 <div class="absolute top-5 left-5 space-y-2">
@@ -181,7 +181,7 @@ const HomePage = () => {
                                     <span class="bg-[#EE5858] px-3 py-1 text-sm font-bold text-white rounded">HOT</span>
                                 </div>
 
-                                <img className='ml-7 mt-5' src="./public/rasm38.png" alt="" />
+                                <img className='ml-7 mt-5' src="rasm38.png" alt="" />
 
                                 <h1 class="text-[24px] mt-3 ml-7">
                                     Xbox Series S - 512GB SSD Console with Wireless Controller - EU Versio...
@@ -283,36 +283,36 @@ const HomePage = () => {
 
                         <div className='flex items-center justify-between pt-5  '>
                             <div className='border border-[1px] border-[black]/20 p-5 rounded-[10px]  '>
-                                <img src="./public/rasm27.png" alt="" />
+                                <img src="rasm27.png" alt="" />
                                 <p> Computer & Laptop </p>
                             </div>
 
 
                             <div className='border border-[1px] border-[black]/20 p-5 rounded-[10px]  ' >
-                                <img src="./public/rasm28.png" alt="" />
+                                <img src="rasm28.png" alt="" />
                                 <p>Computer & Laptop</p>
                             </div>
 
 
                             <div className='border border-[1px] border-[black]/20 p-5 rounded-[10px]  '>
-                                <img src="./public/rasm29.png" alt="" />
+                                <img src="rasm29.png" alt="" />
                                 <p>Computer & Laptop</p>
                             </div>
 
 
                             <div className='border border-[1px] border-[black]/20 p-5 rounded-[10px]  '>
-                                <img src="./public/rasm30.png" alt="" />
+                                <img src="rasm30.png" alt="" />
                                 <p>Computer & Laptop</p>
                             </div>
 
 
                             <div className='border border-[1px] border-[black]/20 p-5 rounded-[10px]  '>
-                                <img src="./public/rasm31.png" alt="" />
+                                <img src="rasm31.png" alt="" />
                                 <p>Computer & Laptop</p>
                             </div>
 
                             <div className='border border-[1px] border-[black]/20 p-5 rounded-[10px]  '>
-                                <img src="./public/rasm32.png" alt="" />
+                                <img src="rasm32.png" alt="" />
                                 <p>Computer & Laptop</p>
                             </div>
                         </div >
@@ -354,7 +354,7 @@ const HomePage = () => {
                                 </button>
                             </div>
 
-                            <img src="./public/rasm33.jpg" alt="" />
+                            <img src="rasm33.jpg" alt="" />
                         </div>
 
                         {/* PRODUCT LIST */}
@@ -364,10 +364,10 @@ const HomePage = () => {
                                     key={i}
                                     className="group border border-gray-300 rounded-lg bg-white overflow-hidden hover:shadow-xl transition"
                                 >
-                                    <img src="./public/rasm34.png" alt="" />
+                                    <img src="rasm34.png" alt="" />
 
                                     <div className="relative h-[180px] flex items-center justify-center">
-                                        <img src="./public/resm34.png" alt="" />
+                                        <img src="resm34.png" alt="" />
 
                                         {/* HOT */}
                                         {i === 0 && (
@@ -421,9 +421,9 @@ const HomePage = () => {
                                     <h1 class="text-[32px] leading-[40px] font-bold">New Apple HomePod Mini</h1>
                                     <p class="text-[#475156] text-[16px] ">Jam-packed with innovation, HomePod mini delivers unexpectedly. </p>
                                     <button class="flex items-center justify-center cursor-pointer max-w-[160px] w-full h-[50px] gap-2 text-[14px] bg-[#FA8232] font-bold text-white ">    SHOP NOW <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg> </button></div>
-                                <img class="w-1/2 object-contain w-[240px] h-[240px]" src="./public/rasm35.png" alt="" />
+                                <img class="w-1/2 object-contain w-[240px] h-[240px]" src="rasm35.png" alt="" />
                             </div><div class="flex items-center justify-between gap-10 bg-[#191C1F] max-w-[750px] w-full h-[350px] overflow-hidden relative"><div class="flex flex-col gap-4 z-10 ml-8"><h1 class="bg-[#EFD33D] w-[165px] h-[32px] rounded-[2px] font-bold flex items-center justify-center">INTRODUCING NEW</h1><h2 class="text-[32px] leading-[40px] text-white font-bold">Xiaomi Mi 11 Ultra 12GB+256GB</h2><p class="text-[#ADB7BC] font-bold text-[16px] mt-2">*Data provided by internal laboratories. Industry measurment.</p><button class="flex items-center justify-center cursor-pointer max-w-[160px] w-full h-[50px] gap-2 text-[14px] bg-[#FA8232] font-bold text-white">SHOP NOW <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg></button></div><div class="relative w-[340px] h-[350px] mb-[-90px]">
-                                <img class="w-full h-full object-contain" src="./public/rasm36.png" alt="" />
+                                <img class="w-full h-full object-contain" src="rasm36.png" alt="" />
                             </div><p class="absolute top-5 right-2 w-[90px] h-[90px] bg-[#2DA5F3] text-white font-bold text-[20px] flex items-center justify-center rounded-full ">$590</p></div></div></div>
                 </section>
 
@@ -476,7 +476,7 @@ const HomePage = () => {
 
 
                                     <div className="h-[140px] flex items-center justify-center">
-                                        <img src="./public/rasm37.png" alt="" />
+                                        <img src="rasm37.png" alt="" />
                                     </div>
 
 
@@ -504,7 +504,7 @@ const HomePage = () => {
                         <div className="col-span-3 flex flex-col gap-6">
 
                             <div className="bg-[#FFF2A8] rounded-lg p-6 text-center flex flex-col justify-between">
-                                <img src="./public/rasm37.png" alt="" className="mx-auto mb-4" />
+                                <img src="rasm37.png" alt="" className="mx-auto mb-4" />
                                 <h3 className="font-semibold text-lg">Xiaomi True Wireless Earbuds</h3>
                                 <p className="text-sm text-gray-600 mt-2">
                                     Escape the noise, it's time to hear the magic with Xiaomi Earbuds
