@@ -13,12 +13,12 @@ const Header = () => {
                         <div className=' flex items-center gap-9'>
                             <div className='flex items-center gap-5 ' >
                                 <p className='text-white'>Follow us:</p>
-                                <img src="./public/rasm1.png" alt="" />
-                                <img src="./public/rasm2.png" alt="" />
-                                <img src="./public/rasm3.png" alt="" />
-                                <img src="./public/rasm4.png" alt="" />
-                                <img src="./public/rasm5.png" alt="" />
-                                <img src="./public/rasm6.png" alt="" />
+                                <img src="rasm1.png" alt="" />
+                                <img src="rasm2.png" alt="" />
+                                <img src="rasm3.png" alt="" />
+                                <img src="rasm4.png" alt="" />
+                                <img src="rasm5.png" alt="" />
+                                <img src="rasm6.png" alt="" />
                             </div>
                             <div className='flex items-center gap-5'>
                                 <select className='text-white' >
