@@ -1,7 +1,22 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { Link, NavLink } from 'react-router-dom'
+import LikePage from '../pages/LikePage'
+import { LikeProductsContext } from '../context/LikeContext'
 
 const Header = () => {
+
+    const {like} = useContext(LikeProductsContext)
+
+
+
+
+
+
+
+
+
+
+
     return (
         <>
             <header className='bg-[#1B6392] fixed top-0 left-0 w-full z-50 '>
@@ -78,11 +93,26 @@ const Header = () => {
                         </div>
 
 
-                        <div className='flex gap-[5px]'>
-                            <img src="rasm9.png" alt="" />
-                            <img src="rasm10.png" alt="" />
-                            <img src="rasm11.png" alt="" />
+                        <div className='flex gap-5'>
+                            
+                            <NavLink to="/cart" className="relative">
+                                <img src="rasm9.png" alt="Like" className="w-7 h-7" />
+                                
+                                <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full shadow-lg">
+                                    0
+                                </span>
+                            </NavLink>
+
+                            
+                            <NavLink to="/like" className="relative">
+                                <img src="rasm10.png" alt="Cart" className="w-7 h-7" />
+                                <span className="absolute -top-2 -right-2 bg-green-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full shadow-lg">
+                                    {like.length}
+                                </span>
+                            </NavLink>
+                            <img src="rasm11.png" alt="User" />
                         </div>
+
 
                     </div>
 
@@ -92,10 +122,10 @@ const Header = () => {
                 </div>
 
 
-
+                
             </header>
             <div className="fixed top-[135px] left-0 w-full py-4 z-40 bg-white">
-                <div className="container mx-auto">
+                <div className="container mx-auto px-5">
 
                     <div className="flex justify-between items-center">
                         <div className="flex gap-8 items-center">

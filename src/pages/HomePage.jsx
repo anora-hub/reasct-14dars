@@ -1,13 +1,15 @@
 import React from 'react'
 import useGet from '../Hook/useGet'
 import { FiEye } from 'react-icons/fi';
-import { FaCartPlus, FaRegGrinHearts } from 'react-icons/fa';
+import { FaCartPlus, FaRegGrinHearts, FaRegHeart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import Cartlar from '../components/Cartlar';
 
 const HomePage = () => {
     const { loading, data } = useGet({ url: "products" })
     let products = data?.data?.products;
-    let famousProducts = products?.slice(products?.length - 24, products.length-16)
+    let famousProducts = products?.slice(products?.length - 24, products.length - 16)
+
 
     if (loading) {
         return <div>Loading...</div>
@@ -27,7 +29,7 @@ const HomePage = () => {
             <main>
 
 
-                <section class="max-w-screen-2xl mx-auto px-4 py-12">
+                <section class="max-w-screen-2xl mx-auto px-5 pt-8">
 
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
@@ -48,7 +50,7 @@ const HomePage = () => {
                                 <p class="text-gray-600 mb-6">
                                     Save up to 50% on select Xbox games. Get 3 months of PC Game Pass for $2 USD.
                                 </p>
-                                <button class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-md font-medium">
+                                <button class="bg-orange-500 cursor-pointer cursor-pointer hover:bg-orange-600 text-white px-6 py-3 rounded-md font-medium">
                                     Shop Now →
                                 </button>
                             </div>
@@ -75,7 +77,7 @@ const HomePage = () => {
                                     <h3 class="text-xl font-semibold mb-3">
                                         New Google <br /> Pixel 6 Pro
                                     </h3>
-                                    <button class="bg-orange-500 px-4 py-2 rounded-md text-sm">
+                                    <button class="bg-orange-500 cursor-pointer px-4 py-2 rounded-md text-sm">
                                         Shop Now →
                                     </button>
                                 </div>
@@ -96,7 +98,7 @@ const HomePage = () => {
                                         Xiaomi FlipBuds Pro
                                     </h3>
                                     <p class="text-gray-600 mb-3">$299 USD</p>
-                                    <button class="bg-orange-500 text-white px-4 py-2 rounded-md text-sm">
+                                    <button class="bg-orange-500 cursor-pointer text-white px-4 py-2 rounded-md text-sm">
                                         Shop Now →
                                     </button>
                                 </div>
@@ -148,7 +150,7 @@ const HomePage = () => {
 
 
                 <section>
-                    <div class="container mx-auto pt-[60px] max-w-[1400px] w-full">
+                    <div class="container mx-auto pt-[60px]  w-full px-5">
 
 
                         <div class="flex items-center justify-between max-[600px]:flex-col">
@@ -202,7 +204,7 @@ const HomePage = () => {
                                         ♥
                                     </button>
 
-                                    <button class="flex items-center gap-2 bg-[#FA8232] text-white px-6 py-3 rounded font-bold">
+                                    <button class="flex cursor-pointer items-center gap-2 bg-[#FA8232] text-white px-6 py-3 rounded font-bold">
                                         🛒 Add To Cart
                                     </button>
 
@@ -216,57 +218,11 @@ const HomePage = () => {
                             </div>
 
 
-                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-
-
-                                {
-                                    famousProducts?.map((el) => (
-                                        <div class=" border-2 border-gray-200 rounded-[10px] group ">
-                                            
-                                            
-                                           
-                                            <div className='relative w-full h-[200px]  ' >
-                                                <img className='object-cover w-full h-full ' src={el.thumbnail} alt={el.title} />
-                                          
-                                            <div className=' items-center flex  opacity-0 group-hover:opacity-100 duration-300  rounded-[5px] justify-center gap-2 absolute top-0 left-0 w-full h-full bg-gray-200/80  '>
-                                                <button className=' cursor-pointer w-[50px] flex items-center justify-center  h-[50px] rounded-full bg-white '>
-                                                    <FaRegGrinHearts className='text-[24px]' />
-                                                </button>
-                                                    <button className=' cursor-pointer w-[50px] flex items-center justify-center  h-[50px] rounded-full bg-white '>
-                                                        <FaCartPlus className='text-[24px]' />
-                                                </button>
-                                                    <Link to={`/products/${el.id}`} className=' cursor-pointer w-[50px] flex items-center justify-center  h-[50px] rounded-full bg-white '>
-                                                        <FiEye className='text-[24px]' />
-                                                </Link>
-
-                                            </div>
-                                            </div>
-
-                                            <h1 class="text-[14px] px-4 mt-2  line-clamp-2">
-                                                {el.description}
-                                            </h1>
-
-                                            <div class="flex gap-2 px-4">
-                                                <span class=" text-yellow-400 font-bold">{el.rating}</span>
-                                                <span class="text-[#2DA5F3] font-bold">${el.price}</span>
-                                            </div>
-
-                                            <span class="absolute top-3 right-3 bg-[#EFD33D] px-3 py-1 text-sm font-bold rounded">
-                                                19% OFF
-                                            </span>
-
-
-                                           
-                                            <button className=' mr-auto ml-auto block mt-[5px] cursor-pointer w-[150px] py-[5px] rounded-[10px] text-white font-bold  bg-orange-400'>
-                                             qo'shish
-                                            </button>
-
-                                        </div>
-                                    ))
+                            <div className="grid grid-cols-4 gap-6 mt-6">
+                                {famousProducts?.map((el) => (
+                                    <Cartlar el={el} />
+                                ))
                                 }
-
-
-
                             </div>
                         </div>
                     </div>
@@ -275,7 +231,7 @@ const HomePage = () => {
 
 
                 <section>
-                    <div className='container mx-auto py-5 mt-8'>
+                    <div className='container mx-auto py-5 mt-8 px-5'>
                         <div className='' >
                             <h1 className='font-bold text-[40px] text-center'>Shop with Categorys</h1>
                         </div>
@@ -320,107 +276,71 @@ const HomePage = () => {
                 </section>
 
                 <section className="px-10 py-12">
-                    {/* HEADER */}
-                    <div className="flex items-center justify-between mb-6">
-                        <h2 className="text-2xl font-semibold">Featured Products</h2>
 
-                        <ul className="flex gap-6 text-sm text-gray-500">
-                            <li className="text-red-500 border-b-2 border-red-500 pb-1 cursor-pointer">
-                                All Product
-                            </li>
-                            <li className="cursor-pointer hover:text-black">Smart Phone</li>
-                            <li className="cursor-pointer hover:text-black">Laptop</li>
-                            <li className="cursor-pointer hover:text-black">Headphone</li>
-                            <li className="text-red-500 cursor-pointer">Browse All Product →</li>
-                        </ul>
-                    </div>
+                    <div className='container mx-auto  py-12 px-5'>
+                        <div className="flex items-center justify-between mb-6">
+                            <h2 className="text-2xl font-semibold">Featured Products</h2>
 
-                    {/* GRID */}
-                    <div className="grid grid-cols-12 gap-6">
-
-                        {/* LEFT BANNER */}
-                        <div className="col-span-3 bg-[#d4b76a] rounded-lg p-6 flex flex-col justify-between">
-                            <div>
-                                <p className="text-sm font-semibold">COMPUTER & ACCESSORIES</p>
-                                <h3 className="text-3xl font-bold mt-3">32% Discount</h3>
-                                <p className="mt-2 text-sm">For all electronics products</p>
-
-                                <div className="mt-4 inline-block bg-white px-3 py-1 text-xs font-semibold">
-                                    ENDS OF CHRISTMAS
-                                </div>
-
-                                <button className="mt-6 bg-red-500 text-white px-6 py-2 rounded-md text-sm">
-                                    SHOP NOW →
-                                </button>
-                            </div>
-
-                            <img src="rasm33.jpg" alt="" />
+                            <ul className="flex gap-6 text-sm text-gray-500">
+                                <li className="text-red-500 border-b-2 border-red-500 pb-1 cursor-pointer">
+                                    All Product
+                                </li>
+                                <li className="cursor-pointer hover:text-black">Smart Phone</li>
+                                <li className="cursor-pointer hover:text-black">Laptop</li>
+                                <li className="cursor-pointer hover:text-black">Headphone</li>
+                                <li className="text-red-500 cursor-pointer">Browse All Product →</li>
+                            </ul>
                         </div>
 
-                        {/* PRODUCT LIST */}
-                        <div className="col-span-9 grid grid-cols-4 gap-6">
-                            {Array.from({ length: 8 }).map((_, i) => (
-                                <div
-                                    key={i}
-                                    className="group border border-gray-300 rounded-lg bg-white overflow-hidden hover:shadow-xl transition"
-                                >
-                                    <img src="rasm34.png" alt="" />
 
-                                    <div className="relative h-[180px] flex items-center justify-center">
-                                        <img src="resm34.png" alt="" />
+                        <div className="grid grid-cols-12 gap-6">
 
-                                        {/* HOT */}
-                                        {i === 0 && (
-                                            <span className="absolute top-3 left-3 bg-red-500 text-white text-xs px-2 py-1 rounded">
-                                                HOT
-                                            </span>
-                                        )}
 
-                                        {/* ACTIONS */}
-                                        <div
-                                            className="absolute right-3 top-1/2 -translate-y-1/2
-                         flex flex-col gap-2 opacity-0
-                         group-hover:opacity-100 transition"
-                                        >
-                                            <span className="w-9 h-9 bg-white rounded-full shadow flex items-center justify-center hover:bg-red-500 hover:text-white">
-                                                <i className="fa-regular fa-heart"></i>
-                                            </span>
-                                            <span className="w-9 h-9 bg-white rounded-full shadow flex items-center justify-center hover:bg-red-500 hover:text-white">
-                                                <i className="fa-solid fa-cart-shopping"></i>
-                                            </span>
-                                            <span className="w-9 h-9 bg-white rounded-full shadow flex items-center justify-center hover:bg-red-500 hover:text-white">
-                                                <i className="fa-regular fa-eye"></i>
-                                            </span>
-                                        </div>
+                            <div className="col-span-3 bg-[#d4b76a] rounded-lg p-6 flex flex-col justify-between">
+                                <div>
+                                    <p className="text-sm font-semibold">COMPUTER & ACCESSORIES</p>
+                                    <h3 className="text-3xl font-bold mt-3">32% Discount</h3>
+                                    <p className="mt-2 text-sm">For all electronics products</p>
+
+                                    <div className="mt-4 inline-block bg-white px-3 py-1 text-xs font-semibold">
+                                        ENDS OF CHRISTMAS
                                     </div>
 
-                                    {/* INFO */}
-                                    <div className="p-4">
-                                        <div className="text-yellow-400 text-sm">
-                                            ★★★★★ <span className="text-gray-400">(530)</span>
-                                        </div>
-
-                                        <h4 className="text-sm font-semibold mt-1">
-                                            Samsung Galaxy S21 5G
-                                        </h4>
-
-                                        <p className="text-blue-600 font-bold mt-1">$2,300</p>
-                                    </div>
+                                    <button className="mt-6 cursor-pointer bg-red-500 text-white px-6 py-2 rounded-md text-sm">
+                                        SHOP NOW →
+                                    </button>
                                 </div>
-                            ))}
+
+                                <img src="rasm33.jpg" alt="" />
+                            </div>
+
+
+
+
+
+
+                            <div className="col-span-9 grid grid-cols-4 gap-6">
+
+                                {famousProducts?.map((el) => (
+                                    <Cartlar el={el} />
+                                ))
+                                }
+
+                            </div>
+
                         </div>
                     </div>
                 </section>
 
                 <section>
-                    <div class="container mx-auto py-[90px] max-w-[1400px] w-full ">
+                    <div class="container mx-auto py-[90px] px-5  w-full ">
                         <div class="grid grid-cols-2 gap-10">
                             <div class="flex items-center justify-center gap-10 p-8 max-w-[750px] w-full h-[350px] bg-gray-200 ">
                                 <div class="flex flex-col gap-4">
                                     <h1 class="text-xl font-bold bg-[#2DA5F3] w-[150px] h-[35px] text-white flex items-center justify-center ">INTRODUCING</h1>
                                     <h1 class="text-[32px] leading-[40px] font-bold">New Apple HomePod Mini</h1>
                                     <p class="text-[#475156] text-[16px] ">Jam-packed with innovation, HomePod mini delivers unexpectedly. </p>
-                                    <button class="flex items-center justify-center cursor-pointer max-w-[160px] w-full h-[50px] gap-2 text-[14px] bg-[#FA8232] font-bold text-white ">    SHOP NOW <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg> </button></div>
+                                    <button class="flex cursor-pointer items-center justify-center cursor-pointer max-w-[160px] w-full h-[50px] gap-2 text-[14px] bg-[#FA8232] font-bold text-white ">    SHOP NOW <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg> </button></div>
                                 <img class="w-1/2 object-contain w-[240px] h-[240px]" src="rasm35.png" alt="" />
                             </div><div class="flex items-center justify-between gap-10 bg-[#191C1F] max-w-[750px] w-full h-[350px] overflow-hidden relative"><div class="flex flex-col gap-4 z-10 ml-8"><h1 class="bg-[#EFD33D] w-[165px] h-[32px] rounded-[2px] font-bold flex items-center justify-center">INTRODUCING NEW</h1><h2 class="text-[32px] leading-[40px] text-white font-bold">Xiaomi Mi 11 Ultra 12GB+256GB</h2><p class="text-[#ADB7BC] font-bold text-[16px] mt-2">*Data provided by internal laboratories. Industry measurment.</p><button class="flex items-center justify-center cursor-pointer max-w-[160px] w-full h-[50px] gap-2 text-[14px] bg-[#FA8232] font-bold text-white">SHOP NOW <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg></button></div><div class="relative w-[340px] h-[350px] mb-[-90px]">
                                 <img class="w-full h-full object-contain" src="rasm36.png" alt="" />
@@ -428,8 +348,8 @@ const HomePage = () => {
                 </section>
 
 
-                <section className="container mx-auto px-6 py-12">
-                    {/* TOP TITLE */}
+                <section className="container mx-auto  py-12 px-5">
+
                     <div className="flex items-center justify-between mb-6">
                         <h2 className="text-xl font-semibold">Computer Accessories</h2>
 
@@ -452,52 +372,12 @@ const HomePage = () => {
 
                         <div className="col-span-9 grid grid-cols-4 gap-6">
 
-                            {Array.from({ length: 8 }).map((_, i) => (
-                                <div
-                                    key={i}
-                                    className="border border-gray-300 rounded-lg p-4 bg-white hover:shadow-lg transition"
-                                >
-                                    {/* BADGE */}
-                                    {i === 0 && (
-                                        <span className="inline-block bg-blue-500 text-white text-xs px-2 py-1 rounded mb-2">
-                                            BEST DEALS
-                                        </span>
-                                    )}
-                                    {i === 2 && (
-                                        <span className="inline-block bg-red-500 text-white text-xs px-2 py-1 rounded mb-2">
-                                            HOT
-                                        </span>
-                                    )}
-                                    {i === 5 && (
-                                        <span className="inline-block bg-green-500 text-white text-xs px-2 py-1 rounded mb-2">
-                                            SALE
-                                        </span>
-                                    )}
 
+                            {famousProducts?.map((el) => (
+                                <Cartlar el={el}/>
+                                           ))
+                                        }
 
-                                    <div className="h-[140px] flex items-center justify-center">
-                                        <img src="rasm37.png" alt="" />
-                                    </div>
-
-
-                                    <div className="text-orange-400 text-sm mt-3">
-                                        ★★★★☆ <span className="text-gray-400">(530)</span>
-                                    </div>
-
-
-                                    <p className="text-sm mt-2 text-gray-700 leading-snug">
-                                        TOZO T6 True Wireless Earbuds Bluetooth Headphone
-                                    </p>
-
-
-                                    <div className="mt-2">
-                                        <span className="text-blue-600 font-bold">$70</span>
-                                        {i === 7 && (
-                                            <span className="text-gray-400 line-through ml-2">$1600</span>
-                                        )}
-                                    </div>
-                                </div>
-                            ))}
                         </div>
 
 
@@ -514,7 +394,7 @@ const HomePage = () => {
                                     Only for: <span className="font-bold">$299 USD</span>
                                 </p>
 
-                                <button className="mt-4 bg-orange-500 text-white py-2 rounded-md">
+                                <button className="mt-4 cursor-pointer bg-orange-500 text-white py-2 rounded-md">
                                     SHOP NOW →
                                 </button>
                             </div>
@@ -530,7 +410,7 @@ const HomePage = () => {
                                     only for <span className="text-yellow-400">SmartPhone</span> product.
                                 </p>
 
-                                <button className="mt-4 bg-blue-500 py-2 px-4 rounded-md">
+                                <button className="mt-4 cursor-pointer bg-blue-500 py-2 px-4 rounded-md">
                                     SHOP NOW →
                                 </button>
                             </div>
