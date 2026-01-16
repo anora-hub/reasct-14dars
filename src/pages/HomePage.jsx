@@ -7,6 +7,7 @@ import Cartlar from '../components/Cartlar';
 
 const HomePage = () => {
     const { loading, data } = useGet({ url: "products" })
+  
     let products = data?.data?.products;
     let famousProducts = products?.slice(products?.length - 24, products.length - 16)
 

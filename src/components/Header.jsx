@@ -1,12 +1,26 @@
-import React, { useContext } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import React, { useContext, useState } from 'react'
+import { Link, Navigate, NavLink, useNavigate } from 'react-router-dom'
 import LikePage from '../pages/LikePage'
 import { LikeProductsContext } from '../context/LikeContext'
+import { CardContextCart } from '../context/CardContext'
+import useGet from '../Hook/useGet'
 
 const Header = () => {
 
-    const {like} = useContext(LikeProductsContext)
+    const { like } = useContext(LikeProductsContext)
+    const { cart } = useContext(CardContextCart)
+    const [search, setSearch] = useState("")
 
+    const { data } = useGet({ url: `products/search?q=${search}&limit=194` })
+    const products = data?.data?.products;
+    const navigate = useNavigate()
+  
+
+   
+
+
+
+    console.log(products);
 
 
 
@@ -61,16 +75,18 @@ const Header = () => {
                         <div className='flex items-center gap-4'>
                             <img src="rasm7.png" alt="" />
                             <h1 className='text-white font-bold text-[35px]'>
-                               <Link to={`/`}>
+                                <Link to={`/`}>
                                     CLICON
-                               </Link>
+                                </Link>
                             </h1>
                         </div>
 
 
-                        <div className="flex-1 mx-40">
+                        <div className="flex-1 mx-40 relative">
                             <div className="relative w-full">
                                 <input
+                                    value={search}
+                                    onChange={(e) => setSearch(e.target.value)}
                                     type="text"
                                     placeholder="Search for anything..."
                                     className="w-full py-3 pl-4 pr-12 rounded-sm bg-gray-100 text-gray-600 placeholder-gray-400 outline-none"
@@ -90,20 +106,49 @@ const Header = () => {
                                     />
                                 </svg>
                             </div>
+
+                            {search && (
+                                <div className="absolute top-full left-0 bg-white p-5 rounded-2xl shadow-2xl shadow-amber-600 flex flex-col gap-2 w-full mt-2 z-50">
+                                    {products?.length > 0 ? (
+                                        products.map((el) => (
+                                            <button onClick={() => {navigate(`/products/${el.id}`) , setSearch("")}}
+                                                key={el.id}
+                                                className="border-[2px] border-amber-600 rounded-2xl p-5 flex items-center gap-5"
+                                            >
+                                                <img
+                                                    className="w-[60px] h-[60px] object-cover"
+                                                    src={el.thumbnail}
+                                                    alt={el.title}
+                                                />
+                                                <div>
+                                                    <h1 className="font-semibold">{el.title}</h1>
+                                                    <p className="text-sm text-gray-500 line-clamp-2">
+                                                        {el.description}
+                                                    </p>
+                                                </div>
+                                            </button>
+                                        ))
+                                    ) : (
+                                        <p className="text-center text-gray-500">Hech narsa topilmadi</p>
+                                    )}
+                                </div>
+                            )}
                         </div>
 
 
+
+
                         <div className='flex gap-5'>
-                            
-                            <NavLink to="/cart" className="relative">
+
+                            <NavLink to="/card" className="relative">
                                 <img src="rasm9.png" alt="Like" className="w-7 h-7" />
-                                
+
                                 <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full shadow-lg">
-                                    0
+                                    {cart?.length}
                                 </span>
                             </NavLink>
 
-                            
+
                             <NavLink to="/like" className="relative">
                                 <img src="rasm10.png" alt="Cart" className="w-7 h-7" />
                                 <span className="absolute -top-2 -right-2 bg-green-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full shadow-lg">
@@ -122,7 +167,7 @@ const Header = () => {
                 </div>
 
 
-                
+
             </header>
             <div className="fixed top-[135px] left-0 w-full py-4 z-40 bg-white">
                 <div className="container mx-auto px-5">
@@ -165,7 +210,7 @@ const Header = () => {
                 </div>
             </div>
 
-            
+
 
         </>
     )

@@ -8,7 +8,7 @@ const [loading ,setLoading] = useState(true)
 const[data , setData] = useState([])
 
 
- async    function getData (){
+ async    function getData(){
     try{
         let res = await axios.get(`https://dummyjson.com/${url}`)
         setData(res)
@@ -29,7 +29,7 @@ toast.error(err)
 }
 useEffect(()=>{
 getData()
-},[])
+},[url])
 
   return {data , loading ,getData }
 }

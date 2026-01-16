@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import useGet from '../Hook/useGet';
 import SweperCard from '../components/SweperCard';
 import { GoStarFill } from 'react-icons/go';
+import { CardContextCart } from '../context/CardContext';
 
 const SinglePage = () => {
-  const { id } = useParams();
+  const { id } = useParams("id");
+  const {cart , addToCart , plus , minus} = useContext(CardContextCart)
 
   const { data, loading } = useGet({ url: `products/${id}` });
 
@@ -81,18 +83,36 @@ const SinglePage = () => {
 
                 <div class="flex flex-wrap items-center gap-4 mb-6">
 
+                  {
+                    cart.find((el) => el.id === item.id) ? <div className=' flex items-center'>
+                      <button
+                      onClick={() => minus(item)}
+                      className="bg-orange-500 cursor-pointer hover:bg-orange-600 text-white px-12 py-4  font-medium">
+                        -
+                      </button>
+                      <button className="bg-white cursor-pointer border-orange-600 border-1  text-[orangered] px-12 py-4  font-medium">
+                        {
 
-                  <div class="flex items-center border cursor-pointer rounded">
-                    <button class="px-3 py-2">-</button>
-                    <span class="px-4">01</span>
-                    <button class="px-3 py-2">+</button>
-                  </div>
-
-                  <button class="bg-orange-500 cursor-pointer hover:bg-orange-600 text-white px-6 py-3 rounded font-medium">
+                          cart?.find((el) => el.id === item.id).qty
+                        }
+                      </button>
+                      <button 
+                       onClick={() => plus(item)}
+                      className="bg-orange-500 cursor-pointer  text-white px-12 py-4  font-medium">
+                        +
+                      </button>
+                    </div> : 
+                     <button onClick={() => addToCart(item)} className="bg-orange-500 cursor-pointer hover:bg-orange-600 text-white px-12 py-4 font-medium">
                     ADD TO CART
                   </button>
+                  }
 
-                  <button class="bg-blue-600 cursor-pointer hover:bg-blue-700 text-white px-6 py-3 rounded font-medium">
+                
+
+                 
+
+
+                  <button class="bg-blue-600 cursor-pointer hover:bg-blue-700 text-white px-12 py-4 rounded font-medium">
                     BUY NOW
                   </button>
                 </div>
@@ -148,10 +168,10 @@ const SinglePage = () => {
                 <GoStarFill className='text-yellow-400' />
               </div>
             </div>
-           <div className='flex items-center gap-1'>
+            <div className='flex items-center gap-1'>
               <p className='font-bold'>izohlar:</p>
               <p>{el.comment}</p>
-           </div>
+            </div>
 
 
 
