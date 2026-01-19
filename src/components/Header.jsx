@@ -155,7 +155,10 @@ const Header = () => {
                                     {like.length}
                                 </span>
                             </NavLink>
-                            <img src="rasm11.png" alt="User" />
+                           
+                                <img src="rasm11.png" alt="User" />
+                                
+                           
                         </div>
 
 

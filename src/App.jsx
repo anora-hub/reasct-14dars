@@ -6,6 +6,8 @@ import CardPage from './pages/CardPage'
 import LikePage from './pages/LikePage'
 import ProductsPage from './pages/ProductsPage'
 import SinglePage from './pages/SinglePage'
+import Cartpage from './pages/Cartpage'
+import Order from './pages/Order'
 
 const App = () => {
     return (
@@ -17,6 +19,8 @@ const App = () => {
                     <Route path='/like' element={<LikePage />} />
                     <Route path='products' element={<ProductsPage />} />
                     <Route path='products/:id' element={<SinglePage />} />
+                    <Route path='cart' element={<Cartpage/>} />
+                    <Route path='order' element={<Order />} />
                 </Route>
             </Routes>
         </BrowserRouter>

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import useGet from '../Hook/useGet';
 import SweperCard from '../components/SweperCard';
 import { GoStarFill } from 'react-icons/go';
@@ -81,16 +81,16 @@ const SinglePage = () => {
 
 
 
-                <div class="flex flex-wrap items-center gap-4 mb-6">
+                <div class="flex flex-wrap  items-center gap-4 mb-6">
 
                   {
                     cart.find((el) => el.id === item.id) ? <div className=' flex items-center'>
                       <button
                       onClick={() => minus(item)}
-                      className="bg-orange-500 cursor-pointer hover:bg-orange-600 text-white px-12 py-4  font-medium">
+                      className="bg-orange-500 cursor-pointer hover:bg-orange-600 text-white px-8 py-4  font-medium">
                         -
                       </button>
-                      <button className="bg-white cursor-pointer border-orange-600 border-1  text-[orangered] px-12 py-4  font-medium">
+                      <button className="bg-white cursor-pointer border-orange-600 border-1  text-[orangered] px-8 py-4  font-medium">
                         {
 
                           cart?.find((el) => el.id === item.id).qty
@@ -98,7 +98,7 @@ const SinglePage = () => {
                       </button>
                       <button 
                        onClick={() => plus(item)}
-                      className="bg-orange-500 cursor-pointer  text-white px-12 py-4  font-medium">
+                      className="bg-orange-500 cursor-pointer  text-white px-8 py-4  font-medium">
                         +
                       </button>
                     </div> : 
@@ -112,9 +112,9 @@ const SinglePage = () => {
                  
 
 
-                  <button class="bg-blue-600 cursor-pointer hover:bg-blue-700 text-white px-12 py-4 rounded font-medium">
+                  <Link to={"/cart"} class="bg-blue-600 cursor-pointer hover:bg-blue-700 text-white px-12 py-4 rounded font-medium">
                     BUY NOW
-                  </button>
+                  </Link>
                 </div>
 
 

@@ -163,12 +163,15 @@ const HomePage = () => {
                                 </p>
                             </div>
 
-                            <h1 class="flex items-center gap-2 text-[#2DA5F3] text-[14px] font-bold max-[600px]:mt-3">
-                                Browse All Product
-                                <svg viewBox="0 0 448 512" width="16">
-                                    <path d="M190.5 66.9l22.2-22.2c9.4-9.4..." />
-                                </svg>
-                            </h1>
+                            <Link to={"products"}>
+                                <h1 class="flex items-center gap-2 text-[#2DA5F3] text-[14px] font-bold max-[600px]:mt-3">
+                                    Browse All Product
+                                    <svg viewBox="0 0 448 512" width="16">
+                                        <path d="M190.5 66.9l22.2-22.2c9.4-9.4..." />
+                                    </svg>
+                                </h1>
+                        
+                        </Link>
                         </div>
 
 
